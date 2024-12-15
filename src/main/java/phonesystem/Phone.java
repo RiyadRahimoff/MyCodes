@@ -1,5 +1,6 @@
 package phonesystem;
 
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,12 +12,11 @@ public class Phone {
         contacts = new LinkedHashMap<>();
     }
 
-    public void addContact(String name, String phoneNumber) {
-        phoneNumber = "+994" + phoneNumber;
-        if (contacts.containsKey(name)) {
+    public void addContact(String phoneNumber, String name) {
+        if (contacts.containsKey(phoneNumber)) {
             System.out.println("Contact already exists.");
         } else {
-            contacts.put(name, phoneNumber);
+            contacts.put(phoneNumber, name);
             System.out.println("Contact added successfully.");
         }
     }
@@ -30,21 +30,14 @@ public class Phone {
         return null;
     }
 
-    public void exsistContact(String phoneNumber) {
+    public void existContact(String phoneNumber) {
         if (contacts.containsKey(phoneNumber)) {
             System.out.println("User exsist.");
         }
     }
 
     public void removeContact(String phoneNumber) {
-        for (Map.Entry<String, String> entry : contacts.entrySet()) {
-            if (entry.getValue().equals(phoneNumber)) {
-                contacts.remove(phoneNumber, entry.getValue());
-            } else {
-                System.out.println("User not found.");
-            }
-        }
-
+        contacts.remove(phoneNumber);
     }
 
     public void displayAllContact() {

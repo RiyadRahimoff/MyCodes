@@ -1,13 +1,12 @@
 package phonesystem;
 
-import calculatorp.Calculator;
-
-import java.lang.foreign.StructLayout;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Phone phone = new Phone();
+
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -18,8 +17,11 @@ public class Main {
                 System.out.println("4.Remove User");
                 System.out.println("5.Display All");
                 System.out.println("6.Exit");
+
                 System.out.print("Select operation: ");
+
                 int a = scanner.nextInt();
+
                 switch (a) {
                     case 1:
                         System.out.print("Enter name: ");
@@ -31,12 +33,12 @@ public class Main {
                     case 2:
                         System.out.print("Enter number: ");
                         String numberSearc = scanner.next();
-                        phone.getUserDetails(numberSearc);
+                        System.out.println(phone.getUserDetails(numberSearc));
                         break;
                     case 3:
                         System.out.print("Enter number: ");
                         String numbeexsis = scanner.next();
-                        phone.exsistContact(numbeexsis);
+                        phone.existContact(numbeexsis);
                         break;
                     case 4:
                         System.out.print("Enter number: ");
@@ -46,14 +48,15 @@ public class Main {
                     case 5:
                         phone.displayAllContact();
                         break;
-
                     case 6:
+                        scanner.close();
                         return;
-
                     default:
                         System.out.println("Invalid operation");
+                        break;
                 }
             }
+
         }
     }
 }
