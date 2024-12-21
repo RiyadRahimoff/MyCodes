@@ -1,4 +1,4 @@
-package parctice;
+package generics;
 
 import java.util.ArrayList;
 
