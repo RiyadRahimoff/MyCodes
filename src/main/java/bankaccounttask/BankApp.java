@@ -12,7 +12,7 @@ public class BankApp {
             bankSystem.getAccount(7672640);
             bankSystem.getAccount(4287178);
         } catch (AccountNotFound ex) {
-            System.out.println("Account not found!");
+            System.out.println("Account not found!!!");
         }
         bankSystem.deposit(7672640, 200);
         bankSystem.deposit(5398934, 0);
