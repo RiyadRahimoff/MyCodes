@@ -1,10 +1,10 @@
 package shoppingcartsys;
 
 public class Product {
+    private static int nextId = 1;
     private int id;
     private String name;
     private double price;
-    private static int nextId = 1;
 
     public Product() {
 

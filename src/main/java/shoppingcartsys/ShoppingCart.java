@@ -1,13 +1,13 @@
 package shoppingcartsys;
 
 import exception.NotCorrectCount;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCart {
-    private HashMap<Integer, Integer> countchecker;
-    private HashMap<Integer, Product> productHashMap;
-    Product product = new Product();
+    private Map<Integer, Integer> countchecker;
+    private Map<Integer, Product> productHashMap;
 
     public ShoppingCart() {
         countchecker = new HashMap<>();
@@ -37,7 +37,7 @@ public class ShoppingCart {
     }
 
     public double getTotalPrice() {
-        double total = 0;
+        double total = 0.0;
         for (Integer productId : productHashMap.keySet()) {
             Product product = productHashMap.get(productId);
             int quantity = countchecker.get(productId);
@@ -47,10 +47,14 @@ public class ShoppingCart {
     }
 
     public void showInfo() {
-        for (Integer productId : productHashMap.keySet()) {
-            Product product = productHashMap.get(productId);
-            int quantity = countchecker.get(productId);
-            System.out.println("Product ID: " + product.getId() + ", " + "Product Name: " + product.getName() + ", Price: " + product.getPrice() + ", Quantity: " + quantity);
+        if (countchecker.isEmpty()) {
+            System.out.println("Your cart is empty");
+        } else {
+            for (Integer productId : productHashMap.keySet()) {
+                Product product = productHashMap.get(productId);
+                int quantity = countchecker.get(productId);
+                System.out.println("Product ID: " + product.getId() + ", " + "Product Name: " + product.getName() + ", Price: " + product.getPrice() + ", Quantity: " + quantity);
+            }
         }
     }
 }
