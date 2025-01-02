@@ -16,7 +16,7 @@ public class BankApp {
         }
         bankSystem.deposit(7672640, 200);
         bankSystem.deposit(5398934, 0);
-        bankSystem.withdraw(5398934, 0);
+        bankSystem.withdraw(5398934, 870);
         bankSystem.withdraw(5398934, 3);
 
     }

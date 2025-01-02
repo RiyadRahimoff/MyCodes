@@ -3,6 +3,7 @@ package userp;
 import exception.NotCorrectUser;
 
 public class Main {
+
     public static void main(String[] args) {
         User user1 = new User(90);
         try {
@@ -10,7 +11,9 @@ public class Main {
         } catch (NotCorrectUser e) {
             System.out.println(e.getMessage());
         }
+
     }
+
 
     public static void checkUserAge(User user) throws NotCorrectUser {
         if (user.getAge() < 65) {
